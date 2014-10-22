@@ -44,7 +44,7 @@ TARGET_BOOTLOADER_BOARD_NAME := manta
 
 BOARD_EGL_CFG := device/samsung/manta/egl.cfg
 
-#OVERRIDE_RS_DRIVER := libRSDriverArm.so
+OVERRIDE_RS_DRIVER := libRSDriverArm.so
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -77,8 +77,6 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.manta libdumpstate.manta
 
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_RECOVERY_UI_LIB := librecovery_ui_manta
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
 

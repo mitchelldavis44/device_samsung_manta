@@ -64,11 +64,11 @@ static struct sensor_t sSensorList[LOCAL_SENSORS + MPLSensor::numSensors] = {
       { "BH1721fvc Light sensor",
           "Rohm",
           1, SENSORS_LIGHT_HANDLE,
-          SENSOR_TYPE_LIGHT, 65528.0f, 1.0f, 0.20f, 16000, 0, 0, { } },
+          SENSOR_TYPE_LIGHT, 65528.0f, 1.0f, 0.20f, 16000, 0, 0, 0, 0, 0, 0, { } },
       { "BMP182 Pressure sensor",
           "Bosch",
           1, SENSORS_PRESSURE_HANDLE,
-          SENSOR_TYPE_PRESSURE, 1100.0f, 0.01f, 0.06f, 50000, 0, 0, { } },
+          SENSOR_TYPE_PRESSURE, 1100.0f, 0.01f, 0.06f, 50000, 0, 0, 0, 0, 0, 0, { } },
 };
 static int numSensors = LOCAL_SENSORS;
 
@@ -370,7 +370,7 @@ static int open_sensors(const struct hw_module_t* module, const char* id,
     memset(&dev->device, 0, sizeof(sensors_poll_device_t));
 
     dev->device.common.tag = HARDWARE_DEVICE_TAG;
-    dev->device.common.version  = 0;
+    dev->device.common.version  = SENSORS_DEVICE_API_VERSION_1_0;
     dev->device.common.module   = const_cast<hw_module_t*>(module);
     dev->device.common.close    = poll__close;
     dev->device.activate        = poll__activate;
